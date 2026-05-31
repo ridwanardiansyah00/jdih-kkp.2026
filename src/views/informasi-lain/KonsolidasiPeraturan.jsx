@@ -1,44 +1,32 @@
 import { useState } from "react";
+import { FaFilePdf } from "react-icons/fa";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import ScrollToTopButton from "../../components/ScrollToTopButton";
 import FloatingLeftButtons from "../../components/FloatingLeftButtons";
-import { FaBook } from "react-icons/fa";
 
-function Artikel() {
+function KonsolidasiPeraturan() {
   const [entries, setEntries] = useState(10);
   const [search, setSearch] = useState("");
 
-  const dataArtikel = [
+  const dataKonsolidasi = [
     {
       no: 1,
-      judul: "Menjaga Ruang Laut Indonesia",
-    },
-    {
-      no: 2,
-      judul:
-        "Pengembangan Bersama Perikanan RI-China di Wilayah Klaim Tumpang-Tindih",
-    },
-    {
-      no: 3,
-      judul:
-        "UUCK Jawab Kebutuhan Pembangunan Sektor Kelautan dan Perikanan",
-    },
-    {
-      no: 4,
-      judul:
-        "RI-Philippine Cooperation in Fighting Illegal Fishing",
-    },
-    {
-      no: 5,
-      judul:
-        "Burning and/or Sinking Foreign Fishing Vessels Conducting Illegal Fishing in Indonesia",
+      judul: "UNDANG-UNDANG KELAUTAN DALAM SATU NASKAH",
+      sumber: [
+        "Undang-Undang Nomor 32 Tahun 2014 tentang Kelautan",
+        "Undang-Undang Nomor 6 Tahun 2023 tentang Penetapan Peraturan Pemerintah Pengganti Undang-Undang Nomor 2 Tahun 2022 tentang Cipta Kerja Menjadi Undang-Undang",
+      ],
     },
   ];
 
-  const filteredData = dataArtikel.filter((item) =>
+  const filteredData = dataKonsolidasi.filter((item) =>
     Object.values(item).some((value) =>
-      value.toString().toLowerCase().includes(search.toLowerCase())
+      Array.isArray(value)
+        ? value.some((v) =>
+            v.toLowerCase().includes(search.toLowerCase())
+          )
+        : value.toString().toLowerCase().includes(search.toLowerCase())
     )
   );
 
@@ -61,7 +49,7 @@ function Artikel() {
         <section className="bg-blue-950 py-5 shadow-md">
           <div className="max-w-7xl mx-auto px-6">
             <h1 className="text-center text-2xl md:text-3xl font-semibold text-white">
-              Artikel
+              Konsolidasi Peraturan
             </h1>
           </div>
         </section>
@@ -92,7 +80,7 @@ function Artikel() {
 
                 <input
                   type="text"
-                  placeholder="Cari artikel..."
+                  placeholder="Cari data..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   className="border border-slate-300 rounded-lg px-3 py-2 w-full md:w-72 text-sm focus:outline-none focus:ring-2 focus:ring-blue-800"
@@ -105,16 +93,20 @@ function Artikel() {
               <table className="w-full border-collapse text-sm">
                 <thead>
                   <tr className="bg-blue-950 text-white">
-                    <th className="px-4 py-3 text-center font-semibold w-[8%]">
+                    <th className="px-4 py-3 text-center font-semibold w-[6%]">
                       No
                     </th>
 
-                    <th className="px-4 py-3 text-center font-semibold w-[72%]">
+                    <th className="px-4 py-3 text-center font-semibold w-[22%]">
                       Judul
                     </th>
 
-                    <th className="px-4 py-3 text-center font-semibold w-[20%]">
-                      Detail
+                    <th className="px-4 py-3 text-center font-semibold w-[60%]">
+                      Sumber Konsolidasi
+                    </th>
+
+                    <th className="px-4 py-3 text-center font-semibold w-[12%]">
+                      File
                     </th>
                   </tr>
                 </thead>
@@ -125,18 +117,25 @@ function Artikel() {
                       key={index}
                       className="border-b border-slate-200 hover:bg-slate-50 transition"
                     >
-                      <td className="px-4 py-2.5 text-center align-middle">
+                      <td className="px-4 py-3 text-center align-top">
                         {item.no}
                       </td>
 
-                      <td className="px-4 py-2.5 align-middle leading-5">
+                      <td className="px-4 py-3 leading-5 text-center align-top font-medium">
                         {item.judul}
                       </td>
 
-                      <td className="px-4 py-2.5 text-center align-middle">
-                        <button className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white px-4 py-1.5 rounded-lg font-medium text-sm shadow-sm transition">
-                          <FaBook size={13} />
-                          Detail
+                      <td className="px-4 py-3 leading-5 align-top">
+                        <ul className="list-disc pl-5 space-y-2">
+                          {item.sumber.map((source, i) => (
+                            <li key={i}>{source}</li>
+                          ))}
+                        </ul>
+                      </td>
+
+                      <td className="px-4 py-3 text-center align-top">
+                        <button className="inline-flex items-center justify-center bg-red-500 hover:bg-red-600 text-white p-2.5 rounded-lg transition">
+                          <FaFilePdf size={17} />
                         </button>
                       </td>
                     </tr>
@@ -148,8 +147,8 @@ function Artikel() {
             {/* Footer */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 mt-5 text-sm text-slate-600">
               <div>
-                Menampilkan 1 sampai {Math.min(entries, filteredData.length)}{" "}
-                dari {filteredData.length} entri
+                Menampilkan 1 sampai {Math.min(entries, filteredData.length)} dari{" "}
+                {filteredData.length} entri
               </div>
 
               <div className="flex items-center border border-slate-300 rounded-lg overflow-hidden">
@@ -177,4 +176,4 @@ function Artikel() {
   );
 }
 
-export default Artikel;
+export default KonsolidasiPeraturan;

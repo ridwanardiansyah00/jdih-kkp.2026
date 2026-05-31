@@ -35,6 +35,7 @@ import MultimediaInteraktif from "./views/informasi-lain/MultimediaInteraktif";
 import Glosarium from "./views/informasi-lain/Glosarium";
 import Sanksi from "./views/informasi-lain/Sanksi";
 import AdvokasiHukum from "./views/informasi-lain/AdvokasiHukum";
+import KonsolidasiPeraturan from "./views/informasi-lain/KonsolidasiPeraturan";
 import PetaInteraktif from "./views/informasi-lain/sistem-informasi-batas-maritim/PetaInteraktif";
 import VideoEdukasi from "./views/informasi-lain/sistem-informasi-batas-maritim/VideoEdukasi";
 import Tentang from "./views/informasi-lain/sistem-informasi-batas-maritim/Tentang";
@@ -83,6 +84,7 @@ function App() {
         <Route path="/informasi-lain/glosarium" element={<Glosarium />} />
         <Route path="/informasi-lain/sanksi" element={<Sanksi />} />
         <Route path="/informasi-lain/advokasi-hukum" element={<AdvokasiHukum />} />
+        <Route path="/informasi-lain/konsolidasi-peraturan" element={<KonsolidasiPeraturan />} />
         <Route path="/informasi-lain/sistem-informasi-batas-maritim/peta-interaktif" element={<PetaInteraktif />} />
         <Route path="/informasi-lain/sistem-informasi-batas-maritim/video-edukasi" element={<VideoEdukasi />} />
         <Route path="/informasi-lain/sistem-informasi-batas-maritim/tentang" element={<Tentang />} />

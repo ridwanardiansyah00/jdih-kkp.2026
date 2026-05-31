@@ -98,6 +98,7 @@ export default function GrafikSection() {
                         fill: "#64748b",
                         fontSize: 12,
                         fontWeight: 500,
+                        fontFamily: "Source Sans 3",
                       }}
                     />
 
@@ -105,6 +106,7 @@ export default function GrafikSection() {
                       tick={{
                         fill: "#64748b",
                         fontSize: 12,
+                        fontFamily: "Source Sans 3",
                       }}
                     />
 
@@ -127,10 +129,11 @@ export default function GrafikSection() {
                         dataKey="berlaku"
                         position="top"
                         style={{
-                          fill: "#334155",
-                          fontSize: 11,
-                          fontWeight: 600,
-                        }}
+                        fill: "#334155",
+                        fontSize: 11,
+                        fontWeight: 600,
+                        fontFamily: "Source Sans 3",
+                      }}
                       />
                     </Bar>
 
@@ -143,10 +146,11 @@ export default function GrafikSection() {
                         dataKey="tidakBerlaku"
                         position="top"
                         style={{
-                          fill: "#334155",
-                          fontSize: 11,
-                          fontWeight: 600,
-                        }}
+                        fill: "#334155",
+                        fontSize: 11,
+                        fontWeight: 600,
+                        fontFamily: "Source Sans 3",
+                      }}
                       />
                     </Bar>
                   </BarChart>

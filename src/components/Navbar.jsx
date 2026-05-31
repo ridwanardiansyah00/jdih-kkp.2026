@@ -189,7 +189,7 @@ function Navbar() {
                             to="/dokumen-hukum/dokumen-hukum-lain/peraturan-asing"
                             className="block px-5 py-3 hover:bg-blue-50"
                           >
-                            Peraturan Asing
+                            Peraturan Berbahasa Asing
                           </Link>
                         </li>
 
@@ -354,6 +354,15 @@ function Navbar() {
                         className="block px-5 py-3 hover:bg-blue-50"
                       >
                         Advokasi Hukum
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        to="/informasi-lain/konsolidasi-peraturan"
+                        className="block px-5 py-3 hover:bg-blue-50"
+                      >
+                        Konsolidasi Peraturan
                       </Link>
                     </li>
 

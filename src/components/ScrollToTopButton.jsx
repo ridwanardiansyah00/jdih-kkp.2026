@@ -47,7 +47,7 @@ function ScrollToTopButton() {
       <button
         onClick={scrollToTop}
         className={`
-          fixed bottom-8 right-8 z-50
+          fixed bottom-8 right-3 z-50
           w-16 h-16
           rounded-full
           bg-[#08244d]

@@ -34,7 +34,7 @@ function SejarahJDIH() {
     <>
       <Navbar />
 
-      <main className="pt-20 min-h-screen bg-slate-100 font-['Poppins']">
+      <main className="pt-20 min-h-screen bg-slate-100">
         {/* Hero Banner */}
         <section
           className="relative h-36 md:h-44 bg-cover bg-center"
@@ -91,7 +91,7 @@ function SejarahJDIH() {
                 {/* Inventarisasi Peraturan */}
                 <div className="overflow-hidden rounded-md bg-white shadow border border-slate-200">
                   <div className="bg-blue-950 px-6 py-4">
-                    <h2 className="text-center text-xl md:text-2xl font-bold text-white font-serif">
+                    <h2 className="text-center text-xl md:text-2xl font-bold text-white">
                       Inventarisasi Peraturan
                     </h2>
                   </div>

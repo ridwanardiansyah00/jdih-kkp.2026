@@ -59,9 +59,9 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="text-5xl font-bold mb-4"
+          className="text-5xl font-semibold mb-4"
         >
-          Selamat Datang
+          SELAMAT DATANG
         </motion.h1>
 
         {/* Subtitle */}

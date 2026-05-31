@@ -19,7 +19,7 @@ function SOP() {
     <>
       <Navbar />
 
-      <main className="pt-20 min-h-screen bg-gray-100 font-['Poppins']">
+      <main className="pt-20 min-h-screen bg-gray-100">
         {/* Hero Banner */}
         <section
           className="relative h-36 md:h-44 bg-cover bg-center"

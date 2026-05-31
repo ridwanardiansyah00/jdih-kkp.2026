@@ -2,7 +2,7 @@ import { FaWhatsapp, FaUniversalAccess } from "react-icons/fa";
 
 export default function FloatingLeftButtons() {
   return (
-    <div className="fixed bottom-6 left-6 z-50 flex flex-col gap-3">
+    <div className="fixed bottom-8 left-3 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
         href="https://wa.me/6281234567890"
